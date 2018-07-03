@@ -60,3 +60,12 @@ Start the emulator
 ```sh
 bt-emu -port 9999 -schema schema.yml -seeds seeds.yml
 ```
+
+
+### Usage with QBT
+
+`bt-emu` was created on a flight from Sydney to San Francisco so that I could make some changes to [`qbt`](https://github.com/catkins/qbt), my little CLI tool for interacting with BigTable via Lua scripts.
+
+```
+ qbt --emulator=localhost:9999 query users 'return row.attributes["attributes:first_name"] == "Gavin"' | jq
+```
